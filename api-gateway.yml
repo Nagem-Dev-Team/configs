@@ -3,6 +3,4 @@ spring:
     gateway:
       routes:
       - id: after_route
-        uri: https://example.org
-        predicates:
-        - Cookie=mycookie,mycookievalue
+        uri: http://10.1.0.131:8199/
