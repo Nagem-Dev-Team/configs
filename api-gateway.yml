@@ -4,20 +4,35 @@ eureka:
   instance:
     hostname: localhost
   client:
+    registry-fetch-interval-seconds: 5
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
+    healthcheck.enabled: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  
-#spring:
-#  cloud:
-#    gateway:
-#      routes:
-#      - id: after_route
-#        uri: http://10.1.0.131:8199/
-#        predicates:
-#        - Path=/baeldung/
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*'
+      defaultZone: http://localhost:9092/eureka
+      
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          predicates:
+          - name: Path
+            args:
+              pattern: "'/'+serviceId+'/**'"
+          filters: 
+          - name: AddRequestHeader
+            args: 
+             name: "'foo'"
+             value: "'bar'"
+          - name: RewritePath
+            args:
+              regexp: "'/' + serviceId + '/(?<remaining>.*)'"
+              replacement: "'/${remaining}'"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
