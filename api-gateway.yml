@@ -7,3 +7,10 @@ spring:
       routes:
       - id: after_route
         uri: http://10.1.0.131:8199/
+        predicates:
+        - Path=/baeldung/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*'
