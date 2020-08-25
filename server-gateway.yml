@@ -10,6 +10,8 @@ eureka:
     healthcheck.enabled: true
     serviceUrl:
       defaultZone: http://localhost:9096/eureka
+    eureka-server-connect-timeout-seconds: 10
+    eureka-server-read-timeout-seconds: 10
       
 spring:
   cloud:
@@ -17,6 +19,7 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
           predicates:
           - name: Path
             args:
