@@ -2,7 +2,7 @@ server:
   port: 8088
 eureka:
   instance:
-   hostname: localhost
+   hostname: 10.1.0.131
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: true
