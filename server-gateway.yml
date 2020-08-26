@@ -2,8 +2,7 @@ server:
   port: 8088
 eureka:
   instance:
-    prefer-ip-address: true
-    hostname: ${spring.cloud.client.ip-address}
+   hostname: localhost
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: true
