@@ -2,7 +2,7 @@ server:
   port: 80
 eureka:
   instance:
-   hostname: server-eureka
+   hostname: server-gateway
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: true
