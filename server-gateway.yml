@@ -2,14 +2,14 @@ server:
   port: 8088
 eureka:
   instance:
-   hostname: 10.1.0.131
+   hostname: localhost
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: true
     fetchRegistry: true
     healthcheck.enabled: true
     serviceUrl:
-      defaultZone: http://10.1.0.131:9096/eureka
+      defaultZone: http://localhost:9096/eureka
     eureka-server-connect-timeout-seconds: 10
     eureka-server-read-timeout-seconds: 10
       
