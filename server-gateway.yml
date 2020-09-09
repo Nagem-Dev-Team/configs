@@ -27,16 +27,7 @@ spring:
           - name: Path
             args:
               pattern: "'/'+serviceId+'/**'"
-#          filters: 
-#          - name: AddRequestHeader
-#            args: 
-#             name: "'foo'"
-#             value: "'bar'"
-#          - name: RewritePath
-#            args:
-#              regexp: "'/' + serviceId + '/(?<remaining>.*)'"
-#              replacement: "'/${remaining}'"
-
+              
 management:
   endpoints:
     web:
