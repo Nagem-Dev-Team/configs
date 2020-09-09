@@ -3,6 +3,7 @@ server:
 eureka:
   instance:
    hostname: 10.1.0.131
+   instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: true
