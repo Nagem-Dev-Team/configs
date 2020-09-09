@@ -2,7 +2,6 @@ server:
   port: 80
 eureka:
   instance:
-   preferIpAddress: true
    hostname: 10.1.0.131
    metadataMap: 
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
